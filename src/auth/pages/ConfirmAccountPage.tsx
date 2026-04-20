@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthLayout } from '../layout/AuthLayout';
 import { PinInput, PinInputField } from '@chakra-ui/pin-input';
 import { useState } from 'react';
@@ -13,6 +13,7 @@ export const ConfirmAccountPage = () => {
     const  [token, setToken] = useState<string>('');
 
     const {confirmAccount} = useAuth();
+    const navigate = useNavigate();
 
     const {mutate} = useMutation({
         mutationFn: confirmAccount,
@@ -20,7 +21,8 @@ export const ConfirmAccountPage = () => {
             toast.error(error.message);
         },
         onSuccess: (data) => {
-            toast.success(data);                
+            toast.success(data); 
+            navigate(`/${PublicRoutes.PUBLIC}/${PublicRoutes.LOGIN}`);
         }
     });
 

@@ -15,7 +15,7 @@ const initialValues: UserRequest = {
 
 export const RequestNewCodePage = () => {
 
-    const [btnDisabled, setBtnDisabled] = useState<boolean>();
+    const [btnDisabled, setBtnDisabled] = useState<boolean>(false);
 
     const {getNewCode} = useAuth();
     const { register, handleSubmit, reset, formState: { errors } } = useForm({ defaultValues: initialValues });

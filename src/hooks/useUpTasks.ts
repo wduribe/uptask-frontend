@@ -17,7 +17,6 @@ interface TaskApi {
 
 export const useUpTasks = () => {
 
-    //*Endpoints Projects
     const createProject = async (formData: ProjectFormData) => {
         try{
             const {data} = await apiUpTasks.post('/projects', formData);
