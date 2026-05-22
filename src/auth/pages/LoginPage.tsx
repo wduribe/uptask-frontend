@@ -109,12 +109,12 @@ export const LoginPage = () => {
           to={`/${PublicRoutes.PUBLIC}/${PublicRoutes.REGISTER}`}
         >¿No tienes cuenta? Crear una</Link>
 
-        <Link
+        {/* <Link
           to={`/${PublicRoutes.PUBLIC}/${PublicRoutes.FORGOT_PASSWORD}`}
           className="text-center text-gray-300 font-normal"
         >
           ¿Olvidaste tu contraseña? Reestablecer
-        </Link>
+        </Link> */}
       </nav>
     </AuthLayout>
   )
